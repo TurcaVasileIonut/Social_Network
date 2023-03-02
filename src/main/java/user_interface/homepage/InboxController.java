@@ -362,7 +362,7 @@ public class InboxController extends MainController {
         this.conversationFriendUsername = friendUsername;
         setFriendNameOnLabel(friendUsername);
         try {
-            loadProfilePicture(this.serviceUsers.getUserProfileByUsername(this.username));
+            loadProfilePicture(this.serviceUsers.getUserProfileByUsername(friendUsername));
         } catch (Exception e) {
             NotificationPopups.errorPopup("Friend photo loading failure");
         }

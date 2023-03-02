@@ -35,9 +35,10 @@ public class UserValidator {
         if(gender.length() == 0)
             message = message + "Invalid gender! ";
 
-        SqlInjectionValidator.validate(firstName, lastName, email, username, password, gender);
-
         if (message.length() != 0)
             throw new UserInvalidException(message);
+
+        SqlInjectionValidator.validate(firstName, lastName, email, username, password, gender);
+
     }
 }
