@@ -64,17 +64,17 @@
       <Label fx:id="description" layoutX="319.0" layoutY="93.0" prefHeight="66.0" prefWidth="253.0" text="Description" />
       <ImageView fitHeight="212.0" fitWidth="420.0" layoutX="158.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.05;">
          <image>
-            <Image url="@../../../profileHighlight.png" />
+            <Image url="@../../../pictures/profileHighlight.png" />
          </image>
       </ImageView>
       <ImageView fx:id="imageView" fitHeight="144.0" fitWidth="139.0" layoutX="167.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../messages_background.jpg" />
+            <Image url="@../../../pictures/messages_background.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="editProfileButtonImageView" fitHeight="34.0" fitWidth="27.0" layoutX="551.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../editButton.png" />
+            <Image url="@../../../pictures/editButton.png" />
          </image>
       </ImageView>
       <VBox fx:id="friendVBox" layoutX="158.0" layoutY="183.0" prefHeight="66.0" prefWidth="420.0" />

@@ -45,7 +45,7 @@ public class NotificationsController extends MainController{
      * Method that loads noNotificationPicture on notifications listView
      */
     private void noNotificationMessage(){
-        VBox vBox = new VBox(new ImageView(new Image("noNotifications.png")));
+        VBox vBox = new VBox(new ImageView(new Image("pictures/noNotifications.png")));
         vBox.setStyle("-fx-opacity: 0.5");
         usersObservableList.add(vBox);
         noNotification = true;

@@ -338,7 +338,7 @@ public class InboxController extends MainController {
      */
     public void loadProfilePicture(UserProfile user){
         if(user.getProfilePicturePath() == null){
-            this.friendImageView.setImage(new Image("defaultProfilePicture.png"));
+            this.friendImageView.setImage(new Image("pictures/defaultProfilePicture.png"));
         }else {
             try {
                 InputStream stream = new FileInputStream(user.getProfilePicturePath());
@@ -347,7 +347,7 @@ public class InboxController extends MainController {
             }catch (Exception e){
                 e.printStackTrace();
                 NotificationPopups.errorPopup("Your image is being changed. The changes will appear in short time");
-                this.friendImageView.setImage(new Image("defaultProfilePicture.png"));
+                this.friendImageView.setImage(new Image("pictures/defaultProfilePicture.png"));
             }
         }
     }

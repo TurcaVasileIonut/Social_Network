@@ -63,12 +63,12 @@
         </Label>
         <ImageView fitHeight="212.0" fitWidth="420.0" layoutX="158.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.05;">
             <image>
-                <Image url="@../../../profileHighlight.png" />
+                <Image url="@../../../pictures/profileHighlight.png" />
             </image>
         </ImageView>
         <ImageView fx:id="imageView" fitHeight="144.0" fitWidth="139.0" layoutX="167.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../messages_background.jpg" />
+                <Image url="@../../../pictures/messages_background.jpg" />
             </image>
         </ImageView>
       <TextField fx:id="descriptionTextField" layoutX="319.0" layoutY="96.0" prefHeight="34.0" prefWidth="253.0" promptText="Description" />

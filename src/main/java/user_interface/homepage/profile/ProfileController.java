@@ -66,7 +66,7 @@ public class ProfileController extends MainController {
     public void loadProfilePicture(UserProfile user){
         System.out.println(user.getProfilePicturePath());
         if(user.getProfilePicturePath() == null){
-            this.imageView.setImage(new Image("defaultProfilePicture.png"));
+            this.imageView.setImage(new Image("pictures/defaultProfilePicture.png"));
         }else {
             try {
                 InputStream stream = new FileInputStream(user.getProfilePicturePath());
@@ -75,7 +75,7 @@ public class ProfileController extends MainController {
             }catch (Exception e){
                 e.printStackTrace();
                 NotificationPopups.errorPopup("Your image is being changed. The changes will appear in short time");
-                this.imageView.setImage(new Image("defaultProfilePicture.png"));
+                this.imageView.setImage(new Image("pictures/defaultProfilePicture.png"));
             }
         }
     }
