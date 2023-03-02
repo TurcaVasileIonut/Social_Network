@@ -35,7 +35,6 @@ public class NotificationsController extends MainController{
             listViewNotifications.setItems(usersObservableList);
             this.serviceFriendships.addObserver(this, this.username);
             this.serviceMessages.addObserver(this, this.username);
-            noNotification = false;
         }catch (Exception e){
             NotificationPopups.errorPopup("Notifications can not be opened! ");
         }
