@@ -1,0 +1,18 @@
+package service.validators;
+
+import service.validators.exceptions.SecurityFaultException;
+
+public class SqlInjectionValidator {
+    public static void validate(String... inputs) throws SecurityFaultException {
+        for(var input: inputs){
+            if(input.toLowerCase().contains("add"))
+                throw new SecurityFaultException();
+            if(input.toLowerCase().contains("delete"))
+                throw new SecurityFaultException();
+            if(input.toLowerCase().contains("update"))
+                throw new SecurityFaultException();
+            if(input.toLowerCase().contains("select"))
+                throw new SecurityFaultException();
+        }
+    }
+}

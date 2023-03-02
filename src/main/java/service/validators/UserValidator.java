@@ -1,5 +1,8 @@
 package service.validators;
 
+import service.validators.exceptions.SecurityFaultException;
+import service.validators.exceptions.UserInvalidException;
+
 public class UserValidator {
 
     /**
@@ -14,7 +17,7 @@ public class UserValidator {
      * @param gender - String - the gender we check to be valid
      */
     public static void validate(String firstName, String lastName, String email,
-                                String username, String password, String gender) throws Exception{
+                                String username, String password, String gender) throws UserInvalidException, SecurityFaultException {
         String message = new String();
         if(firstName.length() == 0)
             message = message + "Invalid first name! ";
@@ -32,7 +35,9 @@ public class UserValidator {
         if(gender.length() == 0)
             message = message + "Invalid gender! ";
 
+        SqlInjectionValidator.validate(firstName, lastName, email, username, password, gender);
+
         if (message.length() != 0)
-            throw new Exception(message);
+            throw new UserInvalidException(message);
     }
 }

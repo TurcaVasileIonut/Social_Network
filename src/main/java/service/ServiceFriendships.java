@@ -74,15 +74,10 @@ public class ServiceFriendships extends ObservableUsers<UsersEvent<String>, Stri
      * @throws Exception if there is no user with an id or if the users are already friends
      */
     public void addFriendship(String username1, String username2) throws Exception {
-
-        /*if(usersRepo.findById(username1) == null)
-            throw new Exception("Username1 not found! ");
-        if(usersRepo.findById(username2) == null)
-            throw new Exception("Username2 not found! ");*/
+        friendshipValidator.validate(username1, username2);
         Friendship friendship = new Friendship(username1, username2);
         if(username1.compareTo(username2) > 0)
             friendship.setFromFirstFriend(false);
-        friendshipValidator.validate(friendship);
         friendshipsRepo.add(friendship);
 
         super.notifyObserversFriendship(new FriendshipChangeEvent(EventType.ADD, null, friendship));

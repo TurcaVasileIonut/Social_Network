@@ -49,7 +49,7 @@ public class ServiceMessages extends ObservableUsers<UsersEvent<String>, String>
      * @throws Exception - if the message content violates the security rules
      */
     public void addNewMessage(String senderUsername, String receiverUsername, String messageContent) throws Exception{
-        this.messageValidator.validate(messageContent);
+        this.messageValidator.validate(senderUsername, receiverUsername, messageContent);
         Message message = new Message(this.messageRepository.generateAvailableId(),
                 senderUsername, receiverUsername, messageContent);
         messageRepository.add(message);

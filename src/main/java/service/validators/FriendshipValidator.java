@@ -1,28 +1,29 @@
 package service.validators;
 
 import domain.Friendship;
-
-import java.util.Objects;
+import service.validators.exceptions.FriendshipInvalidException;
+import service.validators.exceptions.SecurityFaultException;
 
 public class FriendshipValidator {
 
     /**
      * Validate if a friendship content is valid
-     * @param entity The friendship we want to validate
      * @throws Exception if the friendship is not valid
      */
-    public static void validate(Friendship entity) throws Exception{
+    public static void validate(String usernameFriend1, String usernameFriend2) throws FriendshipInvalidException, SecurityFaultException {
         String message = new String();
-        String usernameFriend1 = entity.getIdFriend1();
-        String usernameFriend2 = entity.getIdFriend2();
         if(usernameFriend1.isEmpty())
             message = message + "Invalid first name! ";
         if(usernameFriend2.isEmpty())
             message = message + "Invalid last name! ";
         if(usernameFriend1.equals(usernameFriend2))
             message = message + "Invalid pair of ids! ";
+        if(usernameFriend1.equals(usernameFriend2))
+            message = message + "Users must be different! ";
+        SqlInjectionValidator.validate(usernameFriend1, usernameFriend2);
+
 
         if (message.length() != 0)
-            throw new Exception(message);
+            throw new FriendshipInvalidException(message);
     }
 }
