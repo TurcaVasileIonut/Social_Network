@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Config {
-    public static String CONFIG_LOCATION = "D:\\JAVA\\Socialio\\src\\main\\java\\config\\config.properties";
+    public static String CONFIG_LOCATION = "D:\\JAVA\\Social_Network\\src\\main\\java\\config\\config.properties";
     public static Properties getProperties() {
         Properties properties = new Properties();
         try {

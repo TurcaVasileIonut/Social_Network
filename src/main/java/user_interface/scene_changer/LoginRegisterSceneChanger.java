@@ -1,7 +1,9 @@
 package user_interface.scene_changer;
 
+import config.Config;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import service.Services;
 import user_interface.Runner;
@@ -56,6 +58,7 @@ public class LoginRegisterSceneChanger {
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
+        stage.getIcons().add(new Image(Config.getProperties().getProperty("logoPath")));
     }
 
 }

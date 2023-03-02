@@ -81,10 +81,10 @@ public class EditProfileController extends MainController {
      */
     private String computeNewPicturePath(){
         if(this.userProfile.getProfilePicturePath() == null) {
-            File f = new File("src//main//resources//users_pictures//" + this.username);
+            File f = new File("src//main//resources//pictures//users_pictures//" + this.username);
             f.mkdir();
         }
-        return "src//main//resources//users_pictures//" + this.username + "//profilePicture.png";
+        return "src//main//resources//pictures//users_pictures//" + this.username + "//profilePicture.png";
     }
 
     /**
