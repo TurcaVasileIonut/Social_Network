@@ -5,7 +5,9 @@ import domain.User;
 import domain.UserProfile;
 import repository.Repository;
 import repository.database_repository.UsersRepository;
+import service.validators.SqlInjectionValidator;
 import service.validators.UserValidator;
+import service.validators.exceptions.SecurityFaultException;
 import utils.encryptors.StringEncryption;
 
 import java.util.*;
@@ -107,11 +109,13 @@ public class ServiceUsers {
         return matchingUsers;
     }
 
-    public void updateDescription(String newDescription, String username){
+    public void updateDescription(String newDescription, String username) throws SecurityFaultException {
+        SqlInjectionValidator.validate(newDescription, username);
         ((UsersRepository)this.usersRepo).updateDescription(newDescription, username);
     }
 
-    public void changeProfilePicturePath(String newPath, String username) {
+    public void changeProfilePicturePath(String newPath, String username) throws SecurityFaultException {
+        SqlInjectionValidator.validate(newPath, username);
         ((UsersRepository)this.usersRepo).changeProfilePicturePath(newPath, username);
     }
 }

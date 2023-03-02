@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import service.validators.ImageValidator;
+import service.validators.exceptions.SecurityFaultException;
 import user_interface.NotificationPopups;
 import user_interface.homepage.MainController;
 import utils.FileChooser;
@@ -122,7 +123,7 @@ public class EditProfileController extends MainController {
      * A method that updates the description in database and on profile to the descriptionTextField input
      */
     @FXML
-    private void changeDescriptionClick(){
+    private void changeDescriptionClick() throws SecurityFaultException {
         String newDescription = descriptionTextField.getText();
         serviceUsers.updateDescription(newDescription, this.username);
         this.userProfile.setDescription(newDescription);
