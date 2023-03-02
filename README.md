@@ -46,6 +46,7 @@ If the message is received, the logged user will see oo:<br/>
 ![plot](./screenshots/conversation2.png)<br/>
 If the message is seen, the logged user will see:<br/>
 ![plot](./screenshots/conversation3.png)<br/>
+The state of every message will be updated in real time.<br/>
 <br/>
 The logged users will know when they have an unseen message by the red message button:<br/>
 ![plot](./screenshots/conversations4.png)<br/>
@@ -56,3 +57,5 @@ Every user can see their own profile:<br/>
 ![plot](./screenshots/own_profile0.png)<br/>
 Every user can edit their own profile:<br/>
 ![plot](./screenshots/own_profile1.png)<br/>
+
+The application is not vulnerable to sql injection and is very easy to scale
